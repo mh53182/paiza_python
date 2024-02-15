@@ -28,3 +28,74 @@ print(input_line3)
 input_line4, input_line5 = input().split(' ')
 print(input_line4)
 print(input_line5)
+
+# もっとたくさん繰り返す
+for i in range(10):
+    s = input()
+    print(s)
+
+# 規定の文字列をスペースごとに改行出力
+# パターン1
+s = "one two three four five"
+for i in s.split(" "):
+    print(i)
+
+# パターン2
+s = "one two three four five"
+a, b, c, d, e = s.split(" ")
+print(s.replace(" ", "\n"))
+
+print('################')
+
+# 数列の長さが与えられる
+# 数列がスペース区切りで与えられる
+# 探索すべき値が与えられる
+# 値が数列の何番目にあるか(インデックス0を1番目とする)改行出力
+
+# 模範解答
+n = int(input())
+a = [int(x) for x in input().split()]
+k = int(input())
+
+for i in range(n):
+    if a[i] == k:
+        print(i + 1)
+
+
+# 提出したコード
+n = int(input())
+l = []
+
+# 数列の格納が1行入力ではない
+for i in range(n):
+    num = int(input())
+    l.append(num)
+
+t = int(input())
+
+# rangeの引数の取り方に注意
+for i in range(n):
+    if l[i] == t:
+        print(i + 1)
+
+# 修正版
+n = int(input())
+l = [int(x) for x in input().split(' ')]
+t = int(input())
+
+for i in range(len(l)):
+    print('i=', i)
+    print('L=', l[i])
+    if l[i] == t:
+        print(i + 1)
+
+print('################')
+
+N, M = input().split(' ')
+n = int(N)
+m = int(M)
+A = [int(x) for x in input().split(' ')]
+
+for i in range(len(A)):
+    if i - 1 == m:
+        print(A[i])
