@@ -33,4 +33,20 @@
 #         # print
 #         print(" ".join(map(str, A)))
 
+# A, B = map(int, input().split())
+# N = 10000
+# N = N / A
+# N = N % B
+# print(N)
 
+
+s = input()
+
+list = [str(x) for x in s]
+
+for i in range(len(list)-1, 0, -1):
+    if list[i] == "-" and list[i - 1] == "-":
+        # ここでremoveは引数に一致するデータをリストから削除するのでpopを使う
+        list.pop(i)
+
+print(''.join(list))

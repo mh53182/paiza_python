@@ -99,3 +99,10 @@ A = [int(x) for x in input().split(' ')]
 for i in range(len(A)):
     if i - 1 == m:
         print(A[i])
+
+print('#################')
+
+A, B, C, D = map(int, input().split())
+N = ((A + B) * C) ** 2 % D
+print(N)
+
