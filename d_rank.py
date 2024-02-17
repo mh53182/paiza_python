@@ -106,3 +106,37 @@ A, B, C, D = map(int, input().split())
 N = ((A + B) * C) ** 2 % D
 print(N)
 
+print('#######################')
+
+# 連続するハイフンをひとつにするプログラム
+s = input()
+
+list = [str(x) for x in s]
+
+for i in range(len(list)-1, 0, -1):
+    if list[i] == "-" and list[i - 1] == "-":
+        # removeは引数に一致するデータをリストから削除するので、ここではインデックス指定のpopを使う
+        list.pop(i)
+
+print(''.join(list))
+
+print('#########################')
+
+# 食べたいものとメニューを照らし合わせる
+
+s = input()
+n = int(input())
+t = list(input().split())
+
+# for i in range(n):
+#     if t[i] == s:
+#         print('yes')
+#         break
+#     else:
+#         print('no')
+
+# ループを回さなくても"in"を使えばリスト内に一致するデータがあるか確認できる
+if s in t:
+    print('Yes')
+else:
+    print('No')

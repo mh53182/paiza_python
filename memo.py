@@ -1,3 +1,6 @@
+# N個のデータを持つリストにQ回の操作
+# 未解決
+
 # N, Q = input().split(' ')
 # n = int(N)
 # q = int(Q)
@@ -16,6 +19,8 @@
 #         l.append(u)
 
 
+# 模範解答
+
 # N, Q = map(int, input().split())
 # A = [int(x) for x in input().split()]
 
@@ -33,20 +38,9 @@
 #         # print
 #         print(" ".join(map(str, A)))
 
-# A, B = map(int, input().split())
-# N = 10000
-# N = N / A
-# N = N % B
-# print(N)
 
 
-s = input()
-
-list = [str(x) for x in s]
-
-for i in range(len(list)-1, 0, -1):
-    if list[i] == "-" and list[i - 1] == "-":
-        # ここでremoveは引数に一致するデータをリストから削除するのでpopを使う
-        list.pop(i)
-
-print(''.join(list))
+# F文字列
+word = "test"
+print("これは", 1, "回目の", word, "です", sep="")  #通常の記述方法
+print(f"これは{2}回目の{word}です")  # f文字列を使用した場合
