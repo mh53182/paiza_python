@@ -46,19 +46,11 @@ print("これは", 1, "回目の", word, "です", sep="")  #通常の記述方�
 print(f"これは{2}回目の{word}です")  # f文字列を使用した場合
 
 
+
 s = input()
-c = input()
+t = input()
+n = int(input())
 
-# 失敗
-# for i in range(len(s)-1, 0):
-#     print(s[i])
-#     if c == s[i]:
-#         print(i)
-
-# enumerate(s)でインデックス番号と要素を同時にループ処理する
-for i, ele in enumerate(s):
-    if ele == c:
-        print(i + 1)
-
-# findメソッド使えば1行
-print(s.find(c) + 1)
+print(s[:n], end='')
+print(t, end='')
+print(s[n:])

@@ -159,3 +159,47 @@ for _ in range(n):
     ans += input()
 
 print(ans)
+
+print('#######################')
+
+# 与えられた文字列sの中の何番目にcがあるか
+s = input()
+c = input()
+
+# 失敗
+# for i in range(len(s)-1, 0):
+#     print(s[i])
+#     if c == s[i]:
+#         print(i)
+
+# enumerate(s)でインデックス番号と要素を同時にループ処理する
+for i, ele in enumerate(s):
+    if ele == c:
+        print(i + 1)
+
+# findメソッド使えば1行
+print(s.find(c) + 1)
+
+
+print('################')
+
+# 与えられた文字列sのi文字目からj文字目までを出力
+s = input()
+i, j = map(int, input().split())
+
+print(s[i - 1 : j])
+
+print('################')
+
+# 文字列sのn文字目の後ろに文字列tを挿入して出力
+# ※文字列はイミュータブルなのでsそのものは書き換えられない
+s = input()
+t = input()
+n = int(input())
+
+print(s[:n], end='')
+print(t, end='')
+print(s[n:])
+
+# 出力はこれ1行でよかった
+print(s[:n] + t + s[n:])
