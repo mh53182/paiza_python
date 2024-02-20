@@ -140,3 +140,22 @@ if s in t:
     print('Yes')
 else:
     print('No')
+
+print('######################')
+
+# n個の文字列を連結して出力する。
+n = int(input())
+
+# リストに入れてリストの中身を連結した
+# list = []
+# for _ in range(n):
+#     list.append(input())
+
+# print(''.join(list))
+
+# 直接変数に突っ込む方法も。
+ans = ""
+for _ in range(n):
+    ans += input()
+
+print(ans)

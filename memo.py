@@ -55,7 +55,10 @@ c = input()
 #     if c == s[i]:
 #         print(i)
 
-# enumrate(s)でインデックス番号と要素を同時にループ処理する
+# enumerate(s)でインデックス番号と要素を同時にループ処理する
 for i, ele in enumerate(s):
     if ele == c:
         print(i + 1)
+
+# findメソッド使えば1行
+print(s.find(c) + 1)
