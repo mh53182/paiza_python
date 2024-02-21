@@ -47,10 +47,12 @@ print(f"これは{2}回目の{word}です")  # f文字列を使用した場合
 
 
 
-s = input()
-t = input()
-n = int(input())
+# s = input()
+# i, c = input().split()
+# i = int(i)
 
-print(s[:n], end='')
-print(t, end='')
-print(s[n:])
+# print(s[:i-1] + c + s[i:])
+
+S = input()
+s = int(S)
+print(s - 813)
