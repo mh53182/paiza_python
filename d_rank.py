@@ -203,3 +203,14 @@ print(s[n:])
 
 # 出力はこれ1行でよかった
 print(s[:n] + t + s[n:])
+
+print('#########################')
+
+# 入力値X、Yの和のN文字目を出力
+
+X = int(input())
+Y = int(input())
+N = int(input())
+sum = X + Y
+ans = str(sum)
+print(ans[N-1])
