@@ -214,3 +214,43 @@ N = int(input())
 sum = X + Y
 ans = str(sum)
 print(ans[N-1])
+
+print('##################')
+
+# 入力された文字列sの大文字と小文字を入れ替える
+
+# メソッドひとつで一発
+s = input()
+print(s.swapcase())
+
+# 模範解答はこちら
+s = input()
+
+for ele in s:
+    # islowerで小文字かどうかを判定、小文字なら大文字で出力して改行を回避、elseもまた然り
+    if ele.islower():
+        print(ele.upper(), end="")
+    else:
+        print(ele.lower(), end="")
+
+print('######################')
+
+# 入力された文字列Sに文字列Tと一致する部分はあるか？
+
+S = input()
+T = input()
+
+if T in S:
+    print('YES')
+else:
+    print('NO')
+
+print('#####################')
+
+# 文字列の反転
+# 文字列はイミュータブルなので直接書き換えることはできない
+
+s = input()
+# 直接　print(s[::-1])としてもOK
+s_reverse = s[::-1]
+print(s_reverse)
