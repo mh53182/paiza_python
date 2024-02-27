@@ -35,11 +35,18 @@ print(a ^ b) # 演算子は"^"
 
 
 print('##########################')
+
+# 否定論理積
+# NAND演算
+a,b = map(int, input().split())
+print(int(not(a and b)))
+
+print('##########################')
+
 # 以下、まだメモ
 
 # NOR演算(否定的論理和）
 print(int(not(A or B)))
-# NAND演算(否定的論理積）
-print(int(not(A and B)))
+
 # XNOR演算(排他的否定的論理和）
 print(int(not(A ^ B)))
