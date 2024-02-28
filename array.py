@@ -15,3 +15,11 @@ for i in range(len(li)):
 # 模範回答　※入力受付時、li = input().split()　で文字列のリストとして受け取っている。
 for a in li:
     print(a)
+
+print('##################')
+
+n = int(input())
+A = input().split()
+
+for a in A:
+    print(a)
