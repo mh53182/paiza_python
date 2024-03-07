@@ -51,17 +51,36 @@ max_length = -1
 # 最長の列を持つキーを保持する変数　無くても動く。ループ内で適切に値が代入されなかったとき、これが無いとエラーになる。
 # long_line = None
 
-for k, v in line.items():
+# ここから複数の勝者を検知できない失敗コード
+
+# for k, v in line.items():
+#     # 現在のキーのリストの長さが、これまでの最長よりも長い場合
+#     if len(v) > max_length:
+#         # 最長リストの長さを更新
+#         max_length = len(v)
+#         # 最長リストを持つキーを更新
+#         long_line = k  
+
+# # ラムダで書くとうこうなる
+# # long_line = max(line.keys(), key=lambda k: len(line[k]))
+
+# print(long_line)
+
+# ここまで
+
+for v in line.values():
     # 現在のキーのリストの長さが、これまでの最長よりも長い場合
     if len(v) > max_length:
-        # 最長リストの長さを更新
+        # 最長リストの長さを更新　※あくまで長さだけを判定
         max_length = len(v)
-        # 最長リストを持つキーを更新
-        long_line = k  
 
-# ラムダで書くとうこうなる
-# long_line = max(line.keys(), key=lambda k: len(line[k]))
+# 最長の列を持つ園児のリストを作成
+long_line = []
 
-print(long_line)
+# 各列を表す辞書に対して、最長の列と同じ長さかどうか判定してリストに追加
+for k, v in line.items():
+    if len(v) == max_length:
+        long_line.append(k)
 
-# 同率１位の検出が未達成
+# リストの内容を改行表示
+print(*long_line, sep = '\n')
