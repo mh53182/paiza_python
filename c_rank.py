@@ -145,3 +145,59 @@ for _ in range(N):
     print("}")
 
 print('##############')
+
+"""
+クラスの学級委員である paiza 君は、クラスのみんなに次のような形式でアカウントの情報を送ってもらうよう依頼しました。
+
+名前 年齢 誕生日 出身地
+
+送ってもらったデータを使いやすいように整理したいと思った paiza 君はクラス全員分のデータを次のような構造体でまとめることにしました。
+
+student{
+    name : 名前
+    old : 年齢
+    birth : 誕生日
+    state : 出身地
+}
+
+年齢ごとの生徒の名簿を作る仕事を任された paiza 君はクラスメイトのうち、決まった年齢の生徒を取り出したいと考えました。
+取り出したい生徒の年齢が与えられるので、その年齢の生徒の名前を出力してください。
+"""
+# 提出版
+n = int(input())
+
+class_mate = {}
+
+for i in range(n):
+    info = input().split()
+    class_mate[i] = info
+
+k = int(input())
+
+for i in class_mate:
+    if int(class_mate[i][1]) == k:
+        print(class_mate[i][0])
+
+# 模範回答　※いっそややこしい
+# 解説はこちら ↓
+# （https://paiza.jp/works/mondai/reviews/show/5eb7dc9a4117b4e51de97919f1ce1109）
+
+class Student:
+    def __init__(self, name, old, birth, state):
+        self.name = name
+        self.old = old
+        self.birth = birth
+        self.state = state
+
+n = int(input())
+
+roster = [None] * n
+for i in range(n):
+    name, old, birth, state = input().split()
+    roster[i] = Student(name, old, birth, state)
+
+k = input()
+for student in roster:
+    if student.old == k:
+        print(student.name)
+        break
