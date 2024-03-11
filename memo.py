@@ -53,3 +53,22 @@ print(f"これは{2}回目の{word}です")  # f文字列を使用した場合
 
 # print(s[:i-1] + c + s[i:])
 
+class Student:
+    def __init__(self, name, old, birth, state):
+        self.name = name
+        self.old = old
+        self.birth = birth
+        self.state = state
+    
+    def __repr__(self):
+        return f"{self.name} {self.old} {self.birth} {self.state}\n"
+
+n = int(input())
+
+roster = [None] * n
+for i in range(n):
+    name, old, birth, state = input().split()
+    roster[i] = Student(name, old, birth, state)
+
+roster.sort(key=lambda student: int(student.old))
+print(roster)
