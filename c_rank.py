@@ -201,3 +201,102 @@ for student in roster:
     if student.old == k:
         print(student.name)
         break
+
+
+print('##############')
+
+"""
+クラスの学級委員である paiza 君は、クラスのみんなに次のような形式でアカウントの情報を送ってもらうよう依頼しました。
+
+名前 年齢 誕生日 出身地
+
+送ってもらったデータを使いやすいように整理したいと思った paiza 君はクラス全員分のデータを次の形式でまとめることにしました。
+
+User{
+    nickname : 名前
+    old : 年齢
+    birth : 誕生日
+    state : 出身地
+}
+
+この情報を扱いやすくするために、年齢が昇順になるようにデータを並び替えることにしました。
+クラスメートの情報が与えられるので、並び替えた後のデータを出力してください。
+
+"""
+# 提出版
+class Student:
+    def __init__(self, name, old, birth, state):
+        self.name = name
+        self.old = old
+        self.birth = birth
+        self.state = state
+    
+    # リスト内容のプリント時にオブジェクトのメモリアドレスではなくリストの中身を表示させる
+    def __repr__(self):
+        return f"{self.name} {self.old} {self.birth} {self.state}"
+
+n = int(input())
+
+roster = [None] * n
+for i in range(n):
+    name, old, birth, state = input().split()
+    roster[i] = Student(name, old, birth, state)
+
+roster.sort(key=lambda student: int(student.old))
+
+for i in range(len(roster)):
+    print(roster[i])
+
+
+# 解答例 1 (ソートを自分で書く)
+class Student:
+    def __init__(self, name, old, birth, state):
+        self.name = name
+        self.old = old
+        self.birth = birth
+        self.state = state
+
+n = int(input())
+
+roster = [None] * n
+for i in range(n):
+    name, old, birth, state = input().split()
+    roster[i] = Student(name, old, birth, state)
+
+# ソートする
+# n回ループ
+for i in range(n):
+    # iの次のインデックスからループ
+    for j in range(i+1, n):
+        # あるインデックス[i]とその次のインデックスの年齢を比較
+        # あるインデックスの方が次のインデックスより年齢が大きければ
+        if roster[i].old > roster[j].old:
+            # 順序を入れ替える
+            roster[i], roster[j] = roster[j], roster[i]
+
+for student in roster:
+    print(student.name, student.old, student.birth, student.state)
+
+
+# 解答例 2 (ソートを自分で書かない)
+class Student:
+    def __init__(self, name, old, birth, state):
+        self.name = name
+        self.old = old
+        self.birth = birth
+        self.state = state
+
+n = int(input())
+
+roster = [None] * n
+for i in range(n):
+    name, old, birth, state = input().split()
+    # 後のソートのためoldをintで受ける
+    roster[i] = Student(name, int(old), birth, state)
+
+# ソート済リストを新たに作成
+    
+sorted_by_old = sorted(roster, key=lambda x: x.old)
+
+for student in sorted_by_old:
+    print(student.name, student.old, student.birth, student.state)

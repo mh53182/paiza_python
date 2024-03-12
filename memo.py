@@ -61,7 +61,7 @@ class Student:
         self.state = state
     
     def __repr__(self):
-        return f"{self.name} {self.old} {self.birth} {self.state}\n"
+        return f"{self.name} {self.old} {self.birth} {self.state}"
 
 n = int(input())
 
@@ -71,4 +71,6 @@ for i in range(n):
     roster[i] = Student(name, old, birth, state)
 
 roster.sort(key=lambda student: int(student.old))
-print(roster)
+
+for i in range(len(roster)):
+    print(roster[i])
